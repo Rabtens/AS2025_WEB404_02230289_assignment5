@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WAF Lab - Test Website</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; color: #222; }
+    code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>WAF Lab - Test Website</h1>
+  <p>This small site is protected by <strong>Apache + ModSecurity + OWASP Core Rule Set</strong>.
+     It exists only so the firewall has something to protect during the assignment.</p>
+  <ul>
+    <li><a href="search.php?q=hello">search.php</a> - reflects the <code>q</code> parameter (XSS test target)</li>
+    <li><a href="login.php">login.php</a> - login form (SQL injection test target)</li>
+    <li><a href="view.php?page=about">view.php</a> - takes a <code>page</code> parameter (path traversal test target)</li>
+    <li><a href="ping.php?host=localhost">ping.php</a> - takes a <code>host</code> parameter (command injection test target)</li>
+  </ul>
+  <p><em>None of these pages touch a real database, the filesystem or a shell. They only echo input back,
+     so the lab is safe to run.</em></p>
+</body>
+</html>
